@@ -149,7 +149,7 @@
 		</div>
 	</div>
 
-	<!--DNG, 从这里开始-->
+	<!--DNG, 从这里开始 处理文本-->
 	<div class="content-middle">
 		<div class="container">
 			<div class="col-md-6 grid-1" id="deng_app_one">
@@ -164,43 +164,31 @@
 							<i class="glyphicon glyphicon-ok-sign"> </i>{{element}}</a>
 					</li>
 				</ul>
-
 				<center>
-					<a class="visit-button" href="http://meetugo2017.mikecrm.com/XrKOXNH">Book A Visit</a>
+					<a class="visit-button" v-bind:href="book_visit_src">Book A Visit</a>
 					<br/>
 					<br/> </center>
-
 				<p> Basic info </p>
 				<ul class="grid-part">
-					<li>
+					<li v-for="element in array_down">
 						<a>
-							<i class="glyphicon glyphicon-ok-sign"> </i>Location--Near Songfa Road  Station (Line 3 ), Changjiang Road</a>
+							<i class="glyphicon glyphicon-ok-sign"> </i>{{element}}</a>
 					</li>
-					<li>
-						<a>
-							<i class="glyphicon glyphicon-ok-sign"> </i>Payment--1 Months Deposit + 1 Month Rent Payment </a>
-					</li>
-
-					<li>
+					<li id="dictionary_down_one">
 						<a>
 							<i class="glyphicon glyphicon-ok-sign"> </i>
-							Featured Facilities--Kitchen,Cabinet,
-							<br/> Elevator,Air conditioner, TV,Refrigerator,
-							<br/> Bathroom,Washmachine,Table
+							{{dictionary_down_one.line_one}}
+							<br/> {{dictionary_down_one.line_two}}
+							<br/> {{dictionary_down_one.line_three}}
+						</a>
+					</li>
 				</ul>
 				<center>
 					<div>
-						<a class="hvr-sweep-to-top" href="
-
-                              https://maps.apple.com/?address=No.180%20Changjiang%20Road,%20Shanghai%20China&ll=31.351591,121.497674&q=No.180%20Changjiang%20Road
-
-										">AppleMap(Safari)</a>
+						<a class="hvr-sweep-to-top" v-bind:href="apple_map_src">AppleMap(Safari)</a>
 
 
-						<a class="hvr-sweep-to-top" href="
-
-                              http://router.map.qq.com/short?l=a2126a7c6a1fde1d45ae257c7825f0e6
-										">TencentMap</a>
+						<a class="hvr-sweep-to-top" href="tencent_map_src">TencentMap</a>
 					</div>
 				</center>
 
@@ -208,7 +196,7 @@
 			</div>
 
 
-
+<!--DNG, 从这里开始 处理图片-->
 			<div class="col-md-6 span_8">
 
 				<div class="row_8">
@@ -346,8 +334,6 @@
 				<!--AP-Chengjia-XH01-->
 				<div class="col-md-4 bottom-gallery">
 					<div class="gallery-top">
-
-
 						<div>
 							<p>
 								<a href="http://space.meetugo.com/images/AP-Chengjia-XH01/AP-Chengjia-XH01-0.jpeg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo">
@@ -458,20 +444,30 @@
 	</div>
 
 
+<!--DNG: 超男改 这里 就好了-->
 	<script>
 		var app_first = new Vue({
 			el: '#deng_app_one',
 			data: {
 				message_title_left: 'Changjiang Road Apartments',
-				array_upper:["Big One-Bedroom and Outside Room(Type A)（2320+/Month）",
-				"Big One-Bedroom and Outside Room(Type B)（2500+/Month）",
-				"Big One-Bedroom and Outside Room(Type C)（2500+/Month）",
-				"One-Bedroom and Standard Double Room(Type A)（¥2000+/Month）",
-				"One-Bedroom and Standard Double Room(Type B)（¥2000+/Month）",
-				"One-Bedroom and Standard Double Room(Type C)（¥1750+/Month）"]
+				array_upper: ["Big One-Bedroom and Outside Room(Type A)（2320+/Month）",
+					"Big One-Bedroom and Outside Room(Type B)（2500+/Month）",
+					"Big One-Bedroom and Outside Room(Type C)（2500+/Month）",
+					"One-Bedroom and Standard Double Room(Type A)（¥2000+/Month）",
+					"One-Bedroom and Standard Double Room(Type B)（¥2000+/Month）",
+					"One-Bedroom and Standard Double Room(Type C)（¥1750+/Month）"],
+				array_down: ["Location--Near Songfa Road  Station (Line 3 ), Changjiang Road",
+					"Payment--1 Months Deposit + 1 Month Rent Payment"],
+				dictionary_down_one:{line_one:"Featured Facilities--Kitchen,Cabinet,",
+					line_two: "Elevator,Air conditioner, TV,Refrigerator,",
+					line_three: "Bathroom,Washmachine,Table"
+					},
+				book_visit_src: "http://meetugo2017.mikecrm.com/XrKOXNH",
+				apple_map_src:"https://maps.apple.com/?address=No.180%20Changjiang%20Road,%20Shanghai%20China&ll=31.351591,121.497674&q=No.180%20Changjiang%20Road",
+				tencent_map_src: "http://router.map.qq.com/short?l=a2126a7c6a1fde1d45ae257c7825f0e6"
 			}
 		})
-
+		
 	</script>
 </body>
 
