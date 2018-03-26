@@ -218,7 +218,7 @@
 								</h2>
 								<div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-1">
 									<div class="facts">
-										<img src="src_img_two" class="img-responsive" alt="">
+										<img v-once: src="src_img_two" class="img-responsive" alt="">
 									</div>
 								</div>
 								<h2 class="resp-accordion" role="tab" aria-controls="tab_item-2">
@@ -226,7 +226,7 @@
 								</h2>
 								<div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
 									<div class="facts">
-										<img src="http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-03.jpeg" class="img-responsive" alt="">
+										<img v-once:src="src_img_three" class="img-responsive" alt="">
 									</div>
 								</div>
 
@@ -267,7 +267,7 @@
 							<ul class="resp-tabs-list">
 								<li class="resp-tab-item resp-tab-active" aria-controls="tab_item-0" role="tab">
 									<span>
-										<img src="http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-01.jpeg" class="img-responsive" alt="">
+										<img v-bind:src="src_img_one" class="img-responsive" alt="">
 									</span>
 								</li>
 								<li class="resp-tab-item " aria-controls="tab_item-1" role="tab">
@@ -472,10 +472,20 @@
 			el: '#deng_app_two' ,
 			data: {
 				src_img_one: "http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-01.jpeg",
-				src_img_two: "http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-02.jpeg"
+				src_img_two: "http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-02.jpeg",
+				src_img_three: "http://space.meetugo.com/images/AP-Chengjia-BS01/AP-Chengjia-BS01-03.jpeg"
 			}
 		})
 
+
+		var dataOne = {a : 1};
+
+		var vm = new Vue({
+			data: dataOne
+
+		})
+
+		console.log(vm.a == dataOne.a);
 
 	</script>
 </body>
